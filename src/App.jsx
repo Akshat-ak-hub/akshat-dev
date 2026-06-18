@@ -14,7 +14,6 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import BackToTop from './components/BackToTop'
 import ParticleCanvas from './components/ParticleCanvas'
-import GlowTrail from './components/GlowTrail'
 import ScrollProgress from './components/ScrollProgress'
 
 function App() {
@@ -32,7 +31,6 @@ function App() {
       <a href="#about" className="skip-to-content">Skip to content</a>
       <ScrollProgress />
       <ParticleCanvas />
-      <GlowTrail />
       {loaderVisible && <Loader hidden={!loading} />}
       <Navbar />
       <Hero />
