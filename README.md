@@ -1,16 +1,59 @@
-# React + Vite
+# Akshat Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Futuristic developer portfolio built with React + Vite. Showcases projects, skills, certifications, and LeetCode progress with interactive particle backgrounds and smooth animations.
 
-Currently, two official plugins are available:
+## Quick Start
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+git clone <repo-url>
+cd portfolio
+cp .env.example .env.local  # Add your EmailJS & LeetCode credentials
+npm install
+npm run dev
+```
 
-## React Compiler
+## Available Scripts
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start dev server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run lint` | Run ESLint |
+| `npm run format` | Format with Prettier |
 
-## Expanding the ESLint configuration
+## Environment Variables
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Create `.env.local` from `.env.example`:
+
+| Variable | Description |
+|----------|-------------|
+| `VITE_EMAILJS_SERVICE_ID` | EmailJS service ID |
+| `VITE_EMAILJS_TEMPLATE_ID` | EmailJS template ID |
+| `VITE_EMAILJS_PUBLIC_KEY` | EmailJS public key |
+| `VITE_LEETCODE_USERNAME` | LeetCode username |
+| `VITE_SITE_URL` | Deployed site URL |
+
+## Project Structure
+
+```
+src/
+├── components/     # React components
+├── data/          # Extracted data (projects, skills, etc.)
+├── hooks/         # Custom React hooks
+├── styles/        # Global CSS
+├── assets/        # Static assets
+├── App.jsx        # Root component
+└── main.jsx       # Entry point
+```
+
+## Deployment
+
+Deploy to Vercel, Netlify, or any static host. Set the env vars in your hosting dashboard.
+
+## Built With
+
+- React 19 + Vite
+- Lucide React (icons)
+- EmailJS (contact form)
+- Google Fonts (Inter, JetBrains Mono, Orbitron)

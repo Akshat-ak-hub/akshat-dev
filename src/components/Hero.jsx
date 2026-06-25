@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Code2, Send, Github, Linkedin, Trophy, Mail } from 'lucide-react'
+import profileImg from '../assets/profile.jpg'
 
 const phrases = ['CSE Student', 'Data Structures & Algorithms Enthusiast', 'Python & C++ Developer', 'AI & IoT Explorer', 'Building Innovative Solutions']
 
@@ -75,7 +76,7 @@ export default function Hero() {
         </div>
         <div className="hero-right animate-on-scroll">
           <div className="hero-visual">
-            <div className="hero-avatar-ring"><div className="hero-avatar"><span className="avatar-initials">A</span></div></div>
+            <div className="hero-avatar-ring"><div className="hero-avatar"><img src={profileImg} alt="Akshat" className="avatar-img" /></div></div>
             <div className="floating-badge badge-1">Python</div>
             <div className="floating-badge badge-2">C++</div>
             <div className="floating-badge badge-3">React</div>

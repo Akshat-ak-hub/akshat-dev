@@ -15,6 +15,8 @@ import Footer from './components/Footer'
 import BackToTop from './components/BackToTop'
 import ParticleCanvas from './components/ParticleCanvas'
 import ScrollProgress from './components/ScrollProgress'
+import ErrorBoundary from './components/ErrorBoundary'
+import JsonLd from './components/JsonLd'
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -28,20 +30,21 @@ function App() {
 
   return (
     <>
-      <a href="#about" className="skip-to-content">Skip to content</a>
+      <JsonLd />
+      <a href="#about" className="skip-to-content" aria-label="Skip to main content">Skip to content</a>
       <ScrollProgress />
       <ParticleCanvas />
       {loaderVisible && <Loader hidden={!loading} />}
       <Navbar />
       <Hero />
-      <About />
-      <Education />
-      <Skills />
-      <Projects />
-      <Certifications />
-      <LeetCode />
-      <Achievements />
-      <Contact />
+      <ErrorBoundary><About /></ErrorBoundary>
+      <ErrorBoundary><Education /></ErrorBoundary>
+      <ErrorBoundary><Skills /></ErrorBoundary>
+      <ErrorBoundary><Projects /></ErrorBoundary>
+      <ErrorBoundary><Certifications /></ErrorBoundary>
+      <ErrorBoundary><LeetCode /></ErrorBoundary>
+      <ErrorBoundary><Achievements /></ErrorBoundary>
+      <ErrorBoundary><Contact /></ErrorBoundary>
       <Footer />
       <BackToTop />
     </>

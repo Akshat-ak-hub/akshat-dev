@@ -1,11 +1,8 @@
-import { GraduationCap, School, BookOpen } from 'lucide-react'
+import { GraduationCap, BookOpen } from 'lucide-react'
 import AnimateOnScroll from './AnimateOnScroll'
+import { education } from '../data/education'
 
-const items = [
-  { icon: <GraduationCap size={16} />, date: '2022 - Present', title: 'B.Tech Computer Science Engineering', org: 'Chandigarh University', label: 'CGPA', value: '7.48', color: 'text-accent' },
-  { icon: <School size={16} />, date: '2021', title: 'Class XII', org: 'G.S.S.S SAI', label: 'Score', value: '73.4%', color: 'text-accent2' },
-  { icon: <BookOpen size={16} />, date: '2019', title: 'Class X', org: 'Dhruva Public School', label: 'Score', value: '86%', color: 'text-gold' },
-]
+const iconMap = { GraduationCap, BookOpen }
 
 export default function Education() {
   return (
@@ -13,24 +10,27 @@ export default function Education() {
       <div className="container">
         <AnimateOnScroll className="section-header">
           <span className="section-tag">&lt;education&gt;</span>
-          <h2 className="section-title">Education <span className="text-gradient">Timeline</span></h2>
-          <p className="section-subtitle">My academic journey</p>
+          <h2 className="section-title">Academic <span className="text-gradient">Journey</span></h2>
+          <p className="section-subtitle">My educational background and achievements</p>
         </AnimateOnScroll>
         <div className="timeline">
-          {items.map((item, i) => (
-            <AnimateOnScroll key={i} className="timeline-item">
-              <div className="timeline-marker">{item.icon}</div>
-              <div className="timeline-card">
-                <div className="timeline-date">{item.date}</div>
-                <h3>{item.title}</h3>
-                <p className="timeline-org">{item.org}</p>
-                <div className="timeline-score">
-                  <span className="score-label">{item.label}</span>
-                  <span className={`score-value ${item.color}`}>{item.value}</span>
+          {education.map((item, i) => {
+            const Icon = iconMap[item.icon] || GraduationCap
+            return (
+              <AnimateOnScroll key={item.title} className="timeline-item" delay={i * 150}>
+                <div className="timeline-marker"><Icon size={16} /></div>
+                <div className="timeline-card">
+                  <span className="timeline-date">{item.date}</span>
+                  <h3>{item.title}</h3>
+                  <p className="timeline-org">{item.org}</p>
+                  <div className="timeline-score">
+                    <span className="score-label">Score</span>
+                    <span className="score-value">{item.score}</span>
+                  </div>
                 </div>
-              </div>
-            </AnimateOnScroll>
-          ))}
+              </AnimateOnScroll>
+            )
+          })}
         </div>
       </div>
     </section>
